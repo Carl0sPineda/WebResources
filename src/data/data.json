@@ -17,6 +17,7 @@
     {
       "id": 2,
       "name": "Procedimientos almacenados",
+      "image":"https://www.svgrepo.com/show/7344/sql-file-format-symbol.svg",
       "widget1": {
         "languaje":"sql",
         "title": "Turso comandos básicos",
@@ -25,7 +26,8 @@
     },
     {
       "id": 3,
-      "name": "Turso",
+      "name": "Turso comandos",
+      "image":"https://www.svgrepo.com/show/359963/data.svg",
       "widget1": {
         "languaje":"sql",
         "title": "Turso comandos básicos",
