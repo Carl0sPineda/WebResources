@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
 import Home from "./pages/Home";
 import PostDetail from "./components/PostDetail";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
   return (
@@ -9,12 +9,19 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/" element={<HomeTwo />} /> */}
           <Route path="/:id" element={<PostDetail />} />
-          {/* <Route path="/post-2" element={<Post2 />} /> */}
+          <Route
+            path="*"
+            element={
+              <NotFound
+                title="404"
+                message="Página no encontrada"
+                buttonText="Volver al inicio"
+              />
+            }
+          />
         </Routes>
       </Router>
-      {/* <Footer /> */}
     </>
   );
 };
