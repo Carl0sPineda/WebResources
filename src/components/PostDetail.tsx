@@ -3,13 +3,20 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { materialDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import data from "../data/data.json";
 import back from "../assets/return-back.svg";
+import NotFound from "../pages/NotFound";
 
-function PostDetail() {
+const PostDetail = () => {
   const { id } = useParams();
   const post = data.find((post) => post.id === parseInt(id ?? ""));
 
   if (!post) {
-    return <div className="text-red-500">Este post no existe</div>;
+    return (
+      <NotFound
+        title="404"
+        message="Post no encontrado"
+        buttonText="Volver al inicio"
+      />
+    );
   }
 
   return (
@@ -29,32 +36,32 @@ function PostDetail() {
       <p className="mb-4 text-zinc-100">Nombre: {post.name}</p>
 
       {post.widget1 && (
-        <>
+        <div>
           <span className="text-zinc-100">{post.widget1?.title}</span>
           <SyntaxHighlighter
             language={post.widget1.languaje}
             style={materialDark}
-            className="mb-4 rounded-2xl"
+            className="rounded-2xl"
           >
             {post.widget1.code}
           </SyntaxHighlighter>
-        </>
+        </div>
       )}
 
       {post.widget2 && (
-        <>
+        <div>
           <span className="text-zinc-100">{post.widget2.title}</span>
           <SyntaxHighlighter
             language={post.widget2.languaje}
             style={materialDark}
-            className="mb-4 rounded-2xl"
+            className="rounded-2xl"
           >
             {post.widget2.code}
           </SyntaxHighlighter>
-        </>
+        </div>
       )}
     </div>
   );
-}
+};
 
 export default PostDetail;
