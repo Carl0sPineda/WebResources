@@ -1,0 +1,54 @@
+[
+    {
+      "id": 1,
+      "name": "React component",
+      "image":"https://www.svgrepo.com/show/143991/command-window.svg",
+      "widget1": {
+        "languaje": "jsx",
+        "title": "React Router",
+        "code": "import { BrowserRouter as Router, Routes, Route } from \"react-router-dom\";\nimport Home from \"./Componente/Home\";\nimport ItemDetail from \"./Componente/ItemDetail\";\n\nfunction App() {\n    return (\n        <>\n            <Router>\n                <Routes>\n                    <Route path=\"/\" element={<Home />} />\n                    <Route path=\"/post/:id\" element={<ItemDetail />} />\n                </Routes>\n            </Router>\n        </>\n    );\n}\n\nexport default App;"
+      },
+      "widget2": {
+        "title":"Turso comandos básicos",
+        "languaje": "sql",
+        "code": "Ver todas mis dbs ===>  turso db list \nCrear una nueva db ===> turso db create <dbname>\nConectarse a la db y ejecutar sql ===> turso db shell <dbname>\nVer info de mi db como URL y locacion de la db ===> turso db show <dbname>\ngenera un token valido para la conexion ===>  turso db tokens create <dbname>"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Procedimientos almacenados",
+      "widget1": {
+        "languaje":"sql",
+        "title": "Turso comandos básicos",
+        "code": "Ver todas mis dbs ===> turso db list\nCrear una nueva db ===> turso db create <dbname>\nConectarse a la db y ejecutar sql ===> turso db shell <dbname>\nVer info de mi db como URL y locacion de la db ===> turso db show <dbname>\ngenerar un token válido para la conexión ===> turso db tokens create <dbname>"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Turso",
+      "widget1": {
+        "languaje":"sql",
+        "title": "Turso comandos básicos",
+        "code": "Ver todas mis dbs ===> turso db list\nCrear una nueva db ===> turso db create <dbname>\nConectarse a la db y ejecutar sql ===> turso db shell <dbname>\nVer info de mi db como URL y locacion de la db ===> turso db show <dbname>\ngenerar un token válido para la conexión ===> turso db tokens create <dbname>"
+      },
+      "widget2": {
+        "languaje":"sql",
+        "title": "Turso db sql",
+        "code": "CREATE TABLE users (ID INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT);\n\n-- Cambiar el nombre de la columna ID a id\nALTER TABLE users RENAME COLUMN ID TO id;\n\n-- Añadir la columna email\nALTER TABLE users ADD COLUMN email TEXT;\n\n-- Añadir la columna password\nALTER TABLE users ADD COLUMN password TEXT;"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Item 4",
+      "widget2": {
+        "languaje":"sql",
+        "title": "Turso db sql",
+        "code": "CREATE TABLE users (ID INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT);\n\n-- Cambiar el nombre de la columna ID a id\nALTER TABLE users RENAME COLUMN ID TO id;\n\n-- Añadir la columna email\nALTER TABLE users ADD COLUMN email TEXT;\n\n-- Añadir la columna password\nALTER TABLE users ADD COLUMN password TEXT;"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Item 5"
+    }
+  ]
+  
