@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { materialDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { twilight } from "react-syntax-highlighter/dist/esm/styles/prism";
 import data from "../data/data.json";
 import back from "../assets/return-back.svg";
 import NotFound from "../pages/NotFound";
@@ -40,7 +40,7 @@ const PostDetail = () => {
           <span className="text-zinc-100">{post.widget1?.title}</span>
           <SyntaxHighlighter
             language={post.widget1.languaje}
-            style={materialDark}
+            style={twilight}
             className="rounded-2xl"
           >
             {post.widget1.code}
@@ -53,7 +53,7 @@ const PostDetail = () => {
           <span className="text-zinc-100">{post.widget2.title}</span>
           <SyntaxHighlighter
             language={post.widget2.languaje}
-            style={materialDark}
+            style={twilight}
             className="rounded-2xl"
           >
             {post.widget2.code}
