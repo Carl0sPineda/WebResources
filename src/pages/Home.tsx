@@ -14,23 +14,20 @@ const Home = () => {
           rápido a mis fragmentos de código favoritos en un solo lugar.
         </p>
       </div>
-      <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-y-9 mt-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 mt-8">
         {data.map((post: Posts) => (
-          <div key={post.id} className="text-center">
-            <img
-              className="w-28 h-28 mb-4 inline-block p-3 bg-white rounded-xl"
-              src={post.image}
-              alt="imagen placeholder.png"
-              draggable={false}
-            />
-            <h3 className="text-xl font-semibold mb-2">{post.name}</h3>
-            <Link
-              to={`/${post.id}`}
-              className="text-zinc-400 font-bold inline-block text-sm hover:underline"
-            >
-              Ver más
-            </Link>
-          </div>
+          <Link to={`/${post.id}`} key={post.id}>
+            <div className="group cursor-pointer relative">
+              <img
+                src={post.image}
+                alt={post.name}
+                className="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
+              />
+              <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black bg-opacity-100 text-zinc-200 font-bold text-center rounded-md">
+                {post.name}
+              </span>
+            </div>
+          </Link>
         ))}
       </div>
     </div>
