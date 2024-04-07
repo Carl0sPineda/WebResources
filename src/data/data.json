@@ -1,8 +1,8 @@
 [
     {
       "id": 1,
-      "name": "React component",
-      "image":"https://www.svgrepo.com/show/143991/command-window.svg",
+      "name": "React pasar props",
+      "image":"https://scrimba.com/articles/content/images/size/w2000/2022/10/Learn-React-props-in-one-tutorial-3.png",
       "widget1": {
         "languaje": "jsx",
         "title": "React Router",
@@ -17,7 +17,7 @@
     {
       "id": 2,
       "name": "Procedimientos almacenados",
-      "image":"https://www.svgrepo.com/show/7344/sql-file-format-symbol.svg",
+      "image":"https://cdn.educba.com/academy/wp-content/uploads/2019/02/T-SQL-Commands.jpg.webp",
       "widget1": {
         "languaje":"sql",
         "title": "Turso comandos básicos",
@@ -27,7 +27,7 @@
     {
       "id": 3,
       "name": "Turso comandos",
-      "image":"https://www.svgrepo.com/show/359963/data.svg",
+      "image":"https://miro.medium.com/v2/resize:fit:720/format:webp/1*8tYWFGjwXt_2mLP2-lFJjw.png",
       "widget1": {
         "languaje":"sql",
         "title": "Turso comandos básicos",
@@ -41,7 +41,8 @@
     },
     {
       "id": 4,
-      "name": "Item 4",
+      "name": "Prisma comandos",
+      "image":"https://miro.medium.com/v2/resize:fit:720/format:webp/0*VRlI0n8V_zvnoKpB.jpg",
       "widget2": {
         "languaje":"sql",
         "title": "Turso db sql",
@@ -50,7 +51,8 @@
     },
     {
       "id": 5,
-      "name": "Item 5"
+      "name": "Item 5",
+      "image":"https://miro.medium.com/v2/resize:fit:720/format:webp/0*VRlI0n8V_zvnoKpB.jpg"
     }
   ]
   
