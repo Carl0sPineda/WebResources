@@ -11,7 +11,7 @@ const NotFound = ({ title, message, buttonText }: NotFoundProps) => {
     <div className="h-screen flex flex-col justify-center items-center">
       <h1 className="text-8xl font-bold text-gray-200">{title}</h1>
       <span className="text-4xl font-medium text-gray-200">{message}</span>
-      <Link to={"/"} className="mt-4 text-xl text-blue-300 hover:underline">
+      <Link to={"/"} className="mt-4 text-xl text-[#6ae88b] hover:underline">
         {buttonText}
       </Link>
     </div>
