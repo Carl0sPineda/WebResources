@@ -8,10 +8,10 @@ const Home = () => {
       <h1 className="text-center text-xl sm:text-3xl text-white pt-10 font-black">
         Herramientas para desarrollo web
       </h1>
-      <h4 className="text-center text-white pt-4">
+      <p className="text-center text-white pt-4">
         Plataforma personalizada de snippets, diseñada para tener acceso rápido
         a mis fragmentos de código favoritos en un solo lugar
-      </h4>
+      </p>
       <div className="flex flex-col items-center pt-12">
         {POSTS.map((item: DataItem) => (
           <div key={item.id}>
