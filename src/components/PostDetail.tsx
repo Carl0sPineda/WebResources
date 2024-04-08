@@ -1,13 +1,16 @@
-import { useParams, Link } from "react-router-dom";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { twilight } from "react-syntax-highlighter/dist/esm/styles/prism";
-import data from "../data/data.json";
+import { useParams, Link } from "react-router-dom";
+import { POSTS } from "../data/data";
 import back from "../assets/return-back.svg";
 import NotFound from "../pages/NotFound";
 
 const PostDetail = () => {
   const { id } = useParams();
-  const post = data.find((post) => post.id === parseInt(id ?? ""));
+
+  const post = POSTS.flatMap((item) => item.elements).find(
+    (element) => element.id === id
+  );
 
   if (!post) {
     return (
@@ -33,7 +36,7 @@ const PostDetail = () => {
           />
         </Link>
       </div>
-      <span className="text-zinc-100">Nombre: {post.name}</span>
+      <span className="text-zinc-100">Nombre: {post.title}</span>
 
       {post.widget1 && (
         <div className="mt-4">
@@ -57,6 +60,19 @@ const PostDetail = () => {
             className="rounded-2xl"
           >
             {post.widget2.code}
+          </SyntaxHighlighter>
+        </div>
+      )}
+
+      {post.widget4 && (
+        <div className="mt-6">
+          <span className="text-zinc-100">{post.widget4.title}</span>
+          <SyntaxHighlighter
+            language={post.widget4.languaje}
+            style={twilight}
+            className="rounded-2xl"
+          >
+            {post.widget4.code}
           </SyntaxHighlighter>
         </div>
       )}
