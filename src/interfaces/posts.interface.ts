@@ -1,8 +1,12 @@
-export interface Posts {
-  id: number;
-  name: string;
-  description?: string;
-  image?: string;
+export interface Widget {
+  title?: string;
+  languaje: string;
+  code: string;
+}
+
+export interface Element {
+  id: string;
+  title: string;
   widget1?: Widget;
   widget2?: Widget;
   widget3?: Widget;
@@ -11,10 +15,12 @@ export interface Posts {
   widget6?: Widget;
   widget7?: Widget;
   widget8?: Widget;
+  widget9?: Widget;
+  widget10?: Widget;
 }
 
-export interface Widget {
-  languaje: string;
-  title?: string;
-  code: string;
+export interface DataItem {
+  id: string;
+  title: string;
+  elements: Element[];
 }
