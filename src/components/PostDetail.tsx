@@ -22,10 +22,10 @@ const PostDetail = () => {
   return (
     <div className="max-w-3xl mx-auto p-6 rounded-lg">
       <div className="flex justify-between items-center mb-4">
-        <h1 className="text-2xl font-bold text-zinc-100">
+        <h1 className="text-2xl font-bold text-zinc-50">
           Detalles del Elemento
         </h1>
-        <Link to={"/"} className=" text-white font-bold py-2 px-4 rounded">
+        <Link to={"/"} className="py-2 px-4 rounded">
           <img
             className="h-9 w-9 hover:scale-105 ease-in-out duration-150"
             src={back}
@@ -33,10 +33,10 @@ const PostDetail = () => {
           />
         </Link>
       </div>
-      <p className="mb-4 text-zinc-100">Nombre: {post.name}</p>
+      <span className="text-zinc-100">Nombre: {post.name}</span>
 
       {post.widget1 && (
-        <div>
+        <div className="mt-4">
           <span className="text-zinc-100">{post.widget1?.title}</span>
           <SyntaxHighlighter
             language={post.widget1.languaje}
@@ -49,7 +49,7 @@ const PostDetail = () => {
       )}
 
       {post.widget2 && (
-        <div>
+        <div className="mt-6">
           <span className="text-zinc-100">{post.widget2.title}</span>
           <SyntaxHighlighter
             language={post.widget2.languaje}

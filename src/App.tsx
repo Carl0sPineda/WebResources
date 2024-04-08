@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import PostDetail from "./components/PostDetail";
 import NotFound from "./pages/NotFound";
+import "@fontsource-variable/raleway";
 
 const App = () => {
   return (
