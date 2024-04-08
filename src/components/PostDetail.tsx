@@ -40,7 +40,7 @@ const PostDetail = () => {
 
       {post.widget1 && (
         <div className="mt-4">
-          <span className="text-zinc-100">{post.widget1?.title}</span>
+          <span className="text-zinc-100">{post.widget1.title}</span>
           <SyntaxHighlighter
             language={post.widget1.languaje}
             style={twilight}
@@ -64,6 +64,19 @@ const PostDetail = () => {
         </div>
       )}
 
+      {post.widget3 && (
+        <div className="mt-6">
+          <span className="text-zinc-100">{post.widget3.title}</span>
+          <SyntaxHighlighter
+            language={post.widget3.languaje}
+            style={twilight}
+            className="rounded-2xl"
+          >
+            {post.widget3.code}
+          </SyntaxHighlighter>
+        </div>
+      )}
+
       {post.widget4 && (
         <div className="mt-6">
           <span className="text-zinc-100">{post.widget4.title}</span>
@@ -73,6 +86,84 @@ const PostDetail = () => {
             className="rounded-2xl"
           >
             {post.widget4.code}
+          </SyntaxHighlighter>
+        </div>
+      )}
+
+      {post.widget5 && (
+        <div className="mt-6">
+          <span className="text-zinc-100">{post.widget5.title}</span>
+          <SyntaxHighlighter
+            language={post.widget5.languaje}
+            style={twilight}
+            className="rounded-2xl"
+          >
+            {post.widget5.code}
+          </SyntaxHighlighter>
+        </div>
+      )}
+
+      {post.widget6 && (
+        <div className="mt-6">
+          <span className="text-zinc-100">{post.widget6.title}</span>
+          <SyntaxHighlighter
+            language={post.widget6.languaje}
+            style={twilight}
+            className="rounded-2xl"
+          >
+            {post.widget6.code}
+          </SyntaxHighlighter>
+        </div>
+      )}
+
+      {post.widget7 && (
+        <div className="mt-6">
+          <span className="text-zinc-100">{post.widget7.title}</span>
+          <SyntaxHighlighter
+            language={post.widget7.languaje}
+            style={twilight}
+            className="rounded-2xl"
+          >
+            {post.widget7.code}
+          </SyntaxHighlighter>
+        </div>
+      )}
+
+      {post.widget8 && (
+        <div className="mt-6">
+          <span className="text-zinc-100">{post.widget8.title}</span>
+          <SyntaxHighlighter
+            language={post.widget8.languaje}
+            style={twilight}
+            className="rounded-2xl"
+          >
+            {post.widget8.code}
+          </SyntaxHighlighter>
+        </div>
+      )}
+
+      {post.widget9 && (
+        <div className="mt-6">
+          <span className="text-zinc-100">{post.widget9.title}</span>
+          <SyntaxHighlighter
+            language={post.widget9.languaje}
+            style={twilight}
+            className="rounded-2xl"
+          >
+            {post.widget9.code}
+          </SyntaxHighlighter>
+        </div>
+      )}
+
+      {post.widget10 && (
+        <div className="mt-6">
+          <span className="text-zinc-100">{post.widget10.title}</span>
+          <SyntaxHighlighter
+            language={post.widget10.languaje}
+            style={twilight}
+            className="rounded-2xl"
+          >
+            {post.widget10.code}
           </SyntaxHighlighter>
         </div>
       )}

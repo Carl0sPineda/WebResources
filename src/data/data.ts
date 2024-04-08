@@ -50,7 +50,37 @@ export const POSTS: DataItem[] = [
   {
     id: "3",
     title: "🎃 DBS",
-    elements: [{ id: "C-01", title: "Procedimientos almacenados con sql" }],
+    elements: [
+      {
+        id: "C-01",
+        title: "Procedimientos almacenados con SQL",
+        widget1: {
+          title: "1. Crear la base de datos y tabla",
+          languaje: "sql",
+          code: "CREATE DATABASE TODO_APP;\nGO\nUSE TODO_APP;\nGO\n\nCREATE TABLE tasks (\n    id int identity(1,1) primary key NOT NULL,\n    title varchar(40) NOT NULL,\n    autor varchar(30) NOT NULL,\n    status_task varchar(25) NOT NULL,\n    description varchar(150) NOT NULL,\n    start_date date NOT NULL,\n    end_date date NOT NULL\n);\nGO",
+        },
+        widget2: {
+          title: "2. Obtener todos registros de la tabla",
+          languaje: "sql",
+          code: "CREATE PROCEDURE sp_GetAllTasks\nAS\nBEGIN\n  SELECT * FROM tasks;\nEND\nGO",
+        },
+        widget3: {
+          title: "3. Añadir un registro en la tabla",
+          languaje: "sql",
+          code: "CREATE PROCEDURE sp_AddTask\n  @title varchar(40),\n  @autor varchar(30),\n  @status_task varchar(25),\n  @description varchar(150),\n  @start_date date,\n  @end_date date\nAS\nBEGIN\n  INSERT INTO tasks\n    VALUES (@title, @autor, @status_task, @description, @start_date, @end_date);\nEND\nGO",
+        },
+        widget4: {
+          title: "4. Actualizar registro en la tabla",
+          languaje: "sql",
+          code: "CREATE PROCEDURE sp_UpdateTask\n  @id int,\n  @title varchar(40),\n  @autor varchar(30),\n  @status_task varchar(25),\n  @description varchar(150),\n  @start_date date,\n  @end_date date\nAS\nBEGIN\n  UPDATE tasks\n  SET title = @title,\n    autor = @autor,\n    status_task = @status_task,\n    description = @description,\n    start_date = @start_date,\n    end_date = @end_date\n  WHERE id = @id;\nEND\nGO",
+        },
+        widget5: {
+          title: "5. Eliminar un registro en la tabla",
+          languaje: "sql",
+          code: "CREATE PROCEDURE sp_DeleteTask\n  @id int\nAS\nBEGIN\n  DELETE tasks\n  WHERE id = @id;\nEND\nGO",
+        },
+      },
+    ],
   },
   //   {
   //     id: "4",
