@@ -14,7 +14,20 @@ export const POSTS: DataItem[] = [
           code: 'import { BrowserRouter as Router, Routes, Route } from "react-router-dom";\nimport Home from "./Componente/Home";\nimport ItemDetail from "./Componente/ItemDetail";\n\nfunction App() {\n    return (\n        <>\n            <Router>\n                <Routes>\n                    <Route path="/" element={<Home />} />\n                    <Route path="/post/:id" element={<ItemDetail />} />\n                </Routes>\n            </Router>\n        </>\n    );\n}\n\nexport default App;',
         },
       },
-      { id: "A-02", title: "Manejo de estado" },
+      {
+        id: "A-02",
+        title: "Fetching de datos",
+        widget1: {
+          languaje: "jsx",
+          title: "1. Fetch con react, axios y javascript",
+          code: 'import { useState, useEffect } from "react";\nimport axios from "axios";\n\nconst App = () =>  {\n  const [data, setData] = useState([]);\n\n  useEffect(() => {\n    const fetchData = async () => {\n      try {\n        const { data } = await axios.get(\n          "https://jsonplaceholder.typicode.com/comments"\n        );\n        setData(data);\n      } catch (error) {\n        console.error("Error fetching data:", error);\n      }\n    };\n    fetchData();\n  }, []);\n\n  return (\n    <>\n      {data.map((item) => (\n        <ul key={item.id}>\n          <li className="text-white text-center">{item.email}</li>\n          <li className="text-white text-center">{item.name}</li>\n          <li className="text-white text-center">{item.body}</li>\n        </ul>\n      ))}\n    </>\n  );\n}\n\nexport default App;',
+        },
+        widget2: {
+          languaje: "jsx",
+          title: "2. Fetch con react, axios y typescript",
+          code: 'import { useState, useEffect } from "react";\nimport axios from "axios";\n\ninterface Comments {\n  postId: number;\n  id: number;\n  name: string;\n  email: string;\n  body: string;\n}\n\nconst App = () => {\n  const [data, setData] = useState<Comments[]>([]);\n\n  useEffect(() => {\n    const fetchData = async () => {\n      try {\n        const { data } = await axios.get<Comments[]>(\n          "https://jsonplaceholder.typicode.com/comments"\n        );\n        setData(data);\n      } catch (error) {\n        console.error("Error fetching data:", error);\n      }\n    };\n    fetchData();\n  }, []);\n\n  return (\n    <>\n      {data.map((item) => (\n        <ul key={item.id}>\n          <li className="text-white text-center">{item.email}</li>\n          <li className="text-white text-center">{item.name}</li>\n          <li className="text-white text-center">{item.body}</li>\n        </ul>\n      ))}\n    </>\n  );\n}\n\nexport default App;',
+        },
+      },
       { id: "A-03", title: "React" },
     ],
   },
