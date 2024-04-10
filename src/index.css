@@ -10,7 +10,8 @@ html {
     scroll-behavior: smooth;
   }
 
-  body {
+body {
     font-family: 'Raleway Variable', sans-serif, system-ui;
     background: #0C0C0C;
+    scroll-behavior: smooth;
   }
