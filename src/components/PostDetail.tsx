@@ -4,6 +4,7 @@ import { useParams, Link } from "react-router-dom";
 import { POSTS } from "../data/data";
 import back from "../assets/return-back.svg";
 import NotFound from "../pages/NotFound";
+import ScrollToTop from "./ScrollToTop";
 
 const PostDetail = () => {
   const { id } = useParams();
@@ -24,6 +25,7 @@ const PostDetail = () => {
 
   return (
     <div className="max-w-3xl mx-auto p-6 rounded-lg">
+      <ScrollToTop />
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-2xl font-bold text-zinc-50">
           Detalles del Elemento
