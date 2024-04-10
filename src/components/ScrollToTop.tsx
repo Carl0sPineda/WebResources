@@ -41,7 +41,7 @@ const ScrollToTop = () => {
           style={{ transform: "translateX(-100px)" }}
           aria-labelledby="button back to top"
         >
-          <img src={top_circle} alt="top-cirvle.svg" width={25} height={25} />
+          <img src={top_circle} alt="top-cirvle.svg" width={40} height={40} />
         </button>
       )}
     </>
