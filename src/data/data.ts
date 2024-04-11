@@ -7,7 +7,7 @@ export const POSTS: DataItem[] = [
     elements: [
       {
         id: "A-01",
-        title: "React props",
+        title: "Props entre componentes",
         widget1: {
           languaje: "jsx",
           title: "1. Creación de la interfaz",
@@ -42,36 +42,27 @@ export const POSTS: DataItem[] = [
   },
   {
     id: "2",
-    title: "🎀 ORMS",
+    title: "🎀 Comandos",
     elements: [
       {
         id: "B-01",
-        title: "Prisma comandos",
-        widget1: {
-          title: "1. Prisma comandos básicos",
-          languaje: "sql",
-          code: "Ver todas mis dbs ===>  turso db list \nCrear una nueva db ===> turso db create <dbname>\nConectarse a la db y ejecutar sql ===> turso db shell <dbname>\nVer info de mi db como URL y locacion de la db ===> turso db show <dbname>\ngenera un token valido para la conexion ===>  turso db tokens create <dbname>",
-        },
-      },
-      {
-        id: "B-02",
         title: "Turso comandos",
         widget1: {
-          title: "1. Turso comandos básicos",
+          title: "1. Comandos básicos de shell",
           languaje: "sql",
-          code: "Ver todas mis dbs ===>  turso db list \nCrear una nueva db ===> turso db create <dbname>\nConectarse a la db y ejecutar sql ===> turso db shell <dbname>\nVer info de mi db como URL y locacion de la db ===> turso db show <dbname>\ngenera un token valido para la conexion ===>  turso db tokens create <dbname>",
+          code: "-- Iniciar sesión con la shell\nturso auth login\n-- Ver todas mis bases de datos\nturso db list\n-- Conectarse a la db y ejecutar sql\nturso db shell <dbname>\n-- Crear una nueva base de datos\nturso db create <dbname>\n-- Ver información de mi base de datos como URL y locación\nturso db show <dbname>\n-- Generar un token válido para la conexión\nturso db tokens create <dbname>",
         },
         widget2: {
           languaje: "sql",
-          title: "2. Turso db sql",
-          code: "CREATE TABLE users (ID INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT);\n\n-- Cambiar el nombre de la columna ID a id\nALTER TABLE users RENAME COLUMN ID TO id;\n\n-- Añadir la columna email\nALTER TABLE users ADD COLUMN email TEXT;\n\n-- Añadir la columna password\nALTER TABLE users ADD COLUMN password TEXT;",
+          title: "2. Comandos de sqlite para turso",
+          code: "-- Creación de tablas y relación de uno a muchos\ncreate table grupos (\n  id integer primary key autoincrement,\n  nombre text not null\n);\n\ncreate table alumnos (\n  id integer primary key autoincrement,\n  id_grupo integer,\n  nombre text not null,\n  direccion text not null,\n  foreign key(id_grupo) references grupos(id)\n);\n\n-- Añadir la columna cantidad a la tabla grupos\nalter table grupos add column cantidad integer;\n\n-- Cambiar el nombre de la columna a apellidos\nalter table grupos rename column nombre to apellidos;\n\n-- Eliminar una columna\nalter table grupos drop column nombre;\n\n-- Cambiar el nombre de una tabla\nalter table alumnos rename to estudiantes;\n\n-- Eliminar tablas y datos\ndrop table grupos;\ndrop table alumnos;",
         },
       },
     ],
   },
   {
     id: "3",
-    title: "🎃 DBS",
+    title: "🎃 Bases de datos",
     elements: [
       {
         id: "C-01",
