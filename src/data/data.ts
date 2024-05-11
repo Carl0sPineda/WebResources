@@ -123,7 +123,21 @@ export const POSTS: DataItem[] = [
           code: "--Ejemplo con 500GB\n\nPartición Swap\nTamaño: 10240MB (10GB) El doble de memoria RAM que tiene el equipo para dispositivos con menos de 4GB\nTipo de partición: Lógica\nSistema de Ficheros: área de intercambio/swap\nPunto de montaje: en este caso no aplica\n\nPartición /\nSe almacenan las aplicaciones/actualizaciones que voy a instalar de forma predeterminada\nTamaño: 409600MB (400GB) Hay que pensar cuantas aplicaciones vamos a instalar y el uso que le daremos, aproximado y ajustar este tamaño en consecuencia\nTipo de partición: Lógica\nSistema de Ficheros: ext4\nPunto de montaje: /\n\nPartición /home\nAquí se almacenan fotos, videos etc\nTamaño: 92160MB (90GB)\nTipo de partición: Lógica\nSistema de Ficheros: ext4\nPunto de montaje: /home",
         },
       },
-      // { id: "D-02", title: "Element 2 of Item 3" },
+      {
+        id: "D-02",
+        title: "Agregar iconos y temas",
+        widget1: {
+          title: "1. Agregar nuevos iconos",
+          languaje: "bash",
+          code: 'Dirigirse a "https://www.cinnamon-look.org/browse?cat=132&ord=rating"\n\nSeleccionar uno de ellos, descargar el .tar.xz y extraerlo\nIr a carpeta personal y mostrar los archivos ocultos, luego pegar todo en .icons\nNota: Si hay variantes de iconos dentro de la carpeta sacarlos, por ejemplo dark y light',
+        },
+        widget2: {
+          title: "1. Agregar nuevos temas",
+          languaje: "bash",
+          code: 'Dirigirse a "https://www.cinnamon-look.org/browse?cat=135&ord=rating"\n\nSeleccionar uno de ellos, descargar el .tar.xz y extraerlo\nIr a carpeta personal y mostrar los archivos ocultos, luego pegar todo en .themes\nNota: Si hay variantes de iconos dentro de la carpeta sacarlos, por ejemplo dark y light',
+        },
+      },
+      // { id: "D-03", title: "Element 3 of Item 3" },
     ],
   },
 ];
