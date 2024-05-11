@@ -132,7 +132,7 @@ export const POSTS: DataItem[] = [
           code: 'Dirigirse a "https://www.cinnamon-look.org/browse?cat=132&ord=rating"\n\nSeleccionar uno de ellos, descargar el .tar.xz y extraerlo\nIr a carpeta personal y mostrar los archivos ocultos, luego pegar todo en .icons\nNota: Si hay variantes de iconos dentro de la carpeta sacarlos, por ejemplo dark y light',
         },
         widget2: {
-          title: "1. Agregar nuevos temas",
+          title: "2. Agregar nuevos temas",
           languaje: "bash",
           code: 'Dirigirse a "https://www.cinnamon-look.org/browse?cat=135&ord=rating"\n\nSeleccionar uno de ellos, descargar el .tar.xz y extraerlo\nIr a carpeta personal y mostrar los archivos ocultos, luego pegar todo en .themes\nNota: Si hay variantes de iconos dentro de la carpeta sacarlos, por ejemplo dark y light',
         },
