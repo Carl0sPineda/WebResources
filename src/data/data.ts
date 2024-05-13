@@ -137,7 +137,26 @@ export const POSTS: DataItem[] = [
           code: 'Dirigirse a "https://www.cinnamon-look.org/browse?cat=135&ord=rating"\n\nSeleccionar uno de ellos, descargar el .tar.xz y extraerlo\nIr a carpeta personal y mostrar los archivos ocultos, luego pegar todo en .themes\nNota: Si hay variantes de iconos dentro de la carpeta sacarlos, por ejemplo dark y light',
         },
       },
-      // { id: "D-03", title: "Element 3 of Item 3" },
+      {
+        id: "D-03",
+        title: "Instalar Wails",
+        widget1: {
+          title: "1. Requisitos previos",
+          languaje: "bash",
+          code: 'Tener las versiones más recientes de Go y Node.js\nInstalar gcc, libgtk3 y libwebkit\n\n"sudo apt-get update"\n"sudo apt-get install gcc libgtk-3-dev libwebkit2gtk-4.0-dev"',
+        },
+        widget2: {
+          title: "2. Instalar Wails Cli",
+          languaje: "bash",
+          code: "Comando 'go install github.com/wailsapp/wails/v2/cmd/wails@latest'\nIngresar en la terminal 'nano ~/.bashrc'\nAñadir al final 'export PATH=$PATH:/home/[username]/go/bin/'\nIngresar en la terminal 'source ~/.bashrc'",
+        },
+        widget3: {
+          title: "3. Verificación de la instalación",
+          languaje: "bash",
+          code: '"wails doctor"\n"wails version"',
+        },
+      },
+      // { id: "D-04", title: "Element 4 of Item 4" },
     ],
   },
 ];
