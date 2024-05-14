@@ -33,7 +33,7 @@ const CustomAccordion = ({ title, elements }: CustomAccordionProps) => {
         <div className="accordion-content">
           {elements.map((element, index) => (
             <Link to={`/${element.id}`} key={element.id}>
-              <ul className="hover:bg-[#302f2f] text-white">
+              <ul className="hover:bg-[#302f2f] transition-colors duration-400 rounded-md ease-in-out text-white">
                 {index + 1}. {element.title}
               </ul>
             </Link>

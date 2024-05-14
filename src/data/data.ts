@@ -110,17 +110,17 @@ export const POSTS: DataItem[] = [
         widget1: {
           title: "1. Proceso previo al booteo",
           languaje: "bash",
-          code: '--Verificar el estilo de partición del disco entre MBR/GPT\nEn PowerShell escribir el comando => "Get-Disk"\n\n--Verificar el tipo de BIOS, si es UEFI se debe entrar en la BIOS y desactivar el secure boot\nPresionar "Windows + R"\nEscribir "msinfo32" y darle enter',
+          code: '## Verificar el estilo de partición del disco entre MBR/GPT\nEn PowerShell escribir el comando => "Get-Disk"\n\n--Verificar el tipo de BIOS, si es UEFI se debe entrar en la BIOS y desactivar el secure boot\nPresionar "Windows + R"\nEscribir "msinfo32" y darle enter',
         },
         widget2: {
           title: "2. Inicio del booteo mediante una pendrive",
           languaje: "bash",
-          code: "--Requisitos\nUna pendrive\nDescargar el ISO del sistema operativo, por ejemplo Ubuntu\nInstalar Rufus y hacer el booteo en la USB, se formateará el pendrive\nArrancar el sistema mediante BIOS con la pendrive",
+          code: "## Requisitos\nUna pendrive\nDescargar el ISO del sistema operativo, por ejemplo Ubuntu\nInstalar Rufus y hacer el booteo en la USB, se formateará el pendrive\nArrancar el sistema mediante BIOS con la pendrive",
         },
         widget3: {
           title: "3. Gestión de particiones",
           languaje: "bash",
-          code: "--Ejemplo con 500GB\n\nPartición Swap\nTamaño: 10240MB (10GB) El doble de memoria RAM que tiene el equipo para dispositivos con menos de 4GB\nTipo de partición: Lógica\nSistema de Ficheros: área de intercambio/swap\nPunto de montaje: en este caso no aplica\n\nPartición /\nSe almacenan las aplicaciones/actualizaciones que voy a instalar de forma predeterminada\nTamaño: 409600MB (400GB) Hay que pensar cuantas aplicaciones vamos a instalar y el uso que le daremos, aproximado y ajustar este tamaño en consecuencia\nTipo de partición: Lógica\nSistema de Ficheros: ext4\nPunto de montaje: /\n\nPartición /home\nAquí se almacenan fotos, videos etc\nTamaño: 92160MB (90GB)\nTipo de partición: Lógica\nSistema de Ficheros: ext4\nPunto de montaje: /home",
+          code: "## Ejemplo con 500GB\n\nPartición Swap\nTamaño: 10240MB (10GB) El doble de memoria RAM que tiene el equipo para dispositivos con menos de 4GB\nTipo de partición: Lógica\nSistema de Ficheros: área de intercambio/swap\nPunto de montaje: en este caso no aplica\n\nPartición /\nSe almacenan las aplicaciones/actualizaciones que voy a instalar de forma predeterminada\nTamaño: 327680MB (320GB) Hay que pensar cuantas aplicaciones vamos a instalar y el uso que le daremos, aproximado y ajustar este tamaño en consecuencia\nTipo de partición: Lógica\nSistema de Ficheros: ext4\nPunto de montaje: /\n\nPartición /home\nAquí se almacenan fotos, videos etc\nTamaño: 174080MB (170GB)\nTipo de partición: Lógica\nSistema de Ficheros: ext4\nPunto de montaje: /home",
         },
       },
       {
@@ -143,12 +143,12 @@ export const POSTS: DataItem[] = [
         widget1: {
           title: "1. Requisitos previos",
           languaje: "bash",
-          code: 'Tener las versiones más recientes de Go y Node.js\nInstalar gcc, libgtk3 y libwebkit\n\n"sudo apt-get update"\n"sudo apt-get install gcc libgtk-3-dev libwebkit2gtk-4.0-dev"',
+          code: 'Tener las versiones más recientes de Go y Node.js\nInstalar gcc, libgtk3 y libwebkit\n\n"sudo apt update"\n"sudo apt install gcc libgtk-3-dev libwebkit2gtk-4.0-dev"',
         },
         widget2: {
           title: "2. Instalar Wails Cli",
           languaje: "bash",
-          code: "Comando 'go install github.com/wailsapp/wails/v2/cmd/wails@latest'\nIngresar en la terminal 'nano ~/.bashrc'\nAñadir al final 'export PATH=$PATH:/home/[username]/go/bin/'\nIngresar en la terminal 'source ~/.bashrc'",
+          code: 'Comando "go install github.com/wailsapp/wails/v2/cmd/wails@latest"\nIngresar en la terminal "nano .bashrc"\nAñadir al final "export PATH=$PATH:/home/[username]/go/bin/"\nIngresar en la terminal "source .bashrc"',
         },
         widget3: {
           title: "3. Verificación de la instalación",
