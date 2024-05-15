@@ -120,7 +120,7 @@ export const POSTS: DataItem[] = [
         widget3: {
           title: "3. Gestión de particiones",
           languaje: "bash",
-          code: "## Ejemplo con 500GB\n\nPartición Swap\nTamaño: 10240MB (10GB) El doble de memoria RAM que tiene el equipo para dispositivos con menos de 4GB\nTipo de partición: Lógica\nSistema de Ficheros: área de intercambio/swap\nPunto de montaje: en este caso no aplica\n\nPartición /\nSe almacenan las aplicaciones/actualizaciones que voy a instalar de forma predeterminada\nTamaño: 327680MB (320GB) Hay que pensar cuantas aplicaciones vamos a instalar y el uso que le daremos, aproximado y ajustar este tamaño en consecuencia\nTipo de partición: Lógica\nSistema de Ficheros: ext4\nPunto de montaje: /\n\nPartición /home\nAquí se almacenan fotos, videos etc\nTamaño: 174080MB (170GB)\nTipo de partición: Lógica\nSistema de Ficheros: ext4\nPunto de montaje: /home",
+          code: '## Ejemplo con 500GB\n\nPartición "/"\nSe almacenan las aplicaciones/actualizaciones que voy a instalar de forma predeterminada\nTamaño: 327680MB (320GB) Hay que pensar cuantas aplicaciones vamos a instalar y el uso que le daremos, aproximado y ajustar este tamaño en consecuencia\nTipo de partición: Lógica\nSistema de Ficheros: ext4\nPunto de montaje: "/"\n\nPartición "/home"\nAquí se almacenan fotos, videos etc\nTamaño: 184320MB (180GB)\nTipo de partición: Lógica\nSistema de Ficheros: ext4\nPunto de montaje: "/home"',
         },
       },
       {
