@@ -110,17 +110,22 @@ export const POSTS: DataItem[] = [
         widget1: {
           title: "1. Proceso previo al booteo",
           languaje: "bash",
-          code: '## Verificar el estilo de partición del disco entre MBR/GPT\nEn PowerShell escribir el comando => "Get-Disk"\n\n--Verificar el tipo de BIOS, si es UEFI se debe entrar en la BIOS y desactivar el secure boot\nPresionar "Windows + R"\nEscribir "msinfo32" y darle enter',
+          code: '## Verificar el estilo de partición del disco entre MBR/GPT\nEn PowerShell escribir el comando => "Get-Disk"\n\n## Verificar el tipo de BIOS, si es UEFI se debe entrar en la BIOS\n## y desactivar el secure boot\nPresionar "Windows + R"\nEscribir "msinfo32" y darle enter',
         },
         widget2: {
           title: "2. Inicio del booteo mediante una pendrive",
           languaje: "bash",
-          code: "## Requisitos\nUna pendrive\nDescargar el ISO del sistema operativo, por ejemplo Ubuntu\nInstalar Rufus y hacer el booteo en la USB, se formateará el pendrive\nArrancar el sistema mediante BIOS con la pendrive",
+          code: "## Requisitos\nUna pendrive\nDescargar el ISO del sistema operativo, por ejemplo Ubuntu\nInstalar BalenaEtcher y hacer el booteo en la USB, se formateará el pendrive\nUna vez finalizado el proceso retirar y volver a insertar el pendrive\nArrancar el sistema mediante BIOS con la pendrive",
         },
         widget3: {
           title: "3. Gestión de particiones",
           languaje: "bash",
           code: '## Ejemplo con 500GB\n\nPartición "/"\nSe almacenan las aplicaciones/actualizaciones que voy a instalar de forma predeterminada\nTamaño: 327680MB (320GB) Hay que pensar cuantas aplicaciones vamos a instalar y el uso que le daremos, aproximado y ajustar este tamaño en consecuencia\nTipo de partición: Lógica\nSistema de Ficheros: ext4\nPunto de montaje: "/"\n\nPartición "/home"\nAquí se almacenan fotos, videos etc\nTamaño: 184320MB (180GB)\nTipo de partición: Lógica\nSistema de Ficheros: ext4\nPunto de montaje: "/home"',
+        },
+        widget4: {
+          title: "4. Cosas a tomar en cuenta",
+          languaje: "bash",
+          code: '## Para dualboot\nSi tengo previamente instalado el windows en RAID y quiero poner dualboot con linux en\nAHCI, debo estar cambiando para entrar windows en la bios RAID y el AHCI para linux,\npara evitar esto debo tener instalado ambos sistemas operativos en AHCI\n\n## Para una instalción limpia sólo linux\nPara eliminar por completo windows y migrar a sólo linux debo eliminar todas las\npartiiones creadas en ese momento, conservando las que vaya a realizar en linux\nempezando por el "/boot", "/" y "/home"',
         },
       },
       {
