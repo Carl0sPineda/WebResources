@@ -160,6 +160,11 @@ export const POSTS: DataItem[] = [
           languaje: "bash",
           code: '"wails doctor"\n"wails version"',
         },
+        widget4: {
+          title: "4. Realizar el build",
+          languaje: "bash",
+          code: '## Para Linux\nComando "wails build -platform linux/amd64"\n## Para Windows\nComando "wails build -platform windows/amd64"',
+        },
       },
       // { id: "D-04", title: "Element 4 of Item 4" },
     ],
