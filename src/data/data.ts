@@ -46,7 +46,7 @@ export const POSTS: DataItem[] = [
     elements: [
       {
         id: "B-01",
-        title: "Turso comandos",
+        title: "Turso",
         widget1: {
           title: "1. Comandos básicos de shell",
           languaje: "bash",
@@ -54,8 +54,22 @@ export const POSTS: DataItem[] = [
         },
         widget2: {
           languaje: "sql",
-          title: "2. Comandos de sqlite para turso",
+          title: "2. Comandos de sqlite para Turso",
           code: "## Creación de tablas y relación de uno a muchos\ncreate table grupos (\n  id integer primary key autoincrement,\n  nombre text not null\n);\n\ncreate table alumnos (\n  id integer primary key autoincrement,\n  id_grupo integer,\n  nombre text not null,\n  direccion text not null,\n  foreign key(id_grupo) references grupos(id)\n);\n\n## Añadir la columna cantidad a la tabla grupos\nalter table grupos add column cantidad integer;\n\n## Cambiar el nombre de la columna a apellidos\nalter table grupos rename column nombre to apellidos;\n\n## Eliminar una columna\nalter table grupos drop column nombre;\n\n## Cambiar el nombre de una tabla\nalter table alumnos rename to estudiantes;\n\n## Eliminar tablas y datos\ndrop table grupos;\ndrop table alumnos;",
+        },
+      },
+      {
+        id: "B-02",
+        title: "Docker",
+        widget1: {
+          title: "1. Comandos básicos Docker",
+          languaje: "bash",
+          code: "## Lista todas las imágenes de Docker que están almacenadas localmente en tu máquina\ndocker images\n## Lista todos los contenedores de Docker en tu máquina, incluyendo aquellos que están\n## en ejecución, detenidos y en estado de salida\ndocker ps -a\n## Inicia el proceso del contendor\ndocker start más nombre/ID del contenedor \n## Detiene el contendor\ndocker stop más nombre/ID del contenedor\n## Elimina un contenedores que están detenido\ndocker rm más nombre/ID del contenedor",
+        },
+        widget2: {
+          title: "2. Archivos configurables en Docker",
+          languaje: "bash",
+          code: "## Dockerfile\nDefine la manera en que se debe construir una imagen de Docker, describiendo los pasos\nnecesarios para configurar el entorno y la aplicación\n\n## .dockerignore \nEspecifica qué archivos y directorios deben ser ignorados durante la construcción de\nuna imagen de Docker para evitar incluir archivos innecesarios\n\n## docker-compose.yml\nDefine y gestiona aplicaciones Docker multicontenedor de manera estructurada y\nsimplificada, permitiendo la configuración de servicios, redes y volúmenes",
         },
       },
     ],
