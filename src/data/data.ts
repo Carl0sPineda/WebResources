@@ -64,7 +64,7 @@ export const POSTS: DataItem[] = [
         widget1: {
           title: "1. Comandos básicos Docker",
           languaje: "bash",
-          code: "## Lista todas las imágenes de Docker que están almacenadas localmente en tu máquina\ndocker images\n## Lista todos los contenedores de Docker en tu máquina, incluyendo aquellos que están\n## en ejecución, detenidos y en estado de salida\ndocker ps -a\n## Inicia el proceso del contendor\ndocker start más nombre/ID del contenedor \n## Detiene el contendor\ndocker stop más nombre/ID del contenedor\n## Elimina un contenedores que están detenido\ndocker rm más nombre/ID del contenedor",
+          code: "## Lista todas las imágenes de Docker que están almacenadas localmente en tu máquina\ndocker images\n## Lista todos los contenedores de Docker en tu máquina, incluyendo aquellos que están\n## en ejecución, detenidos y en estado de salida\ndocker ps -a\n## Inicia el proceso del contendor\ndocker start más nombre/ID del contenedor \n## Detiene el contendor\ndocker stop más nombre/ID del contenedor\n## Elimina un contenedor que está detenido\ndocker rm más nombre/ID del contenedor",
         },
         widget2: {
           title: "2. Archivos configurables en Docker",
