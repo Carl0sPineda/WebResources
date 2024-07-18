@@ -139,7 +139,7 @@ export const POSTS: DataItem[] = [
         widget4: {
           title: "4. Cosas a tomar en cuenta",
           languaje: "bash",
-          code: '## Para dualboot\nSi tengo previamente instalado el windows en RAID y quiero poner dualboot con linux en\nAHCI, debo estar cambiando para entrar windows en la bios RAID y el AHCI para linux,\npara evitar esto debo tener instalado ambos sistemas operativos en AHCI\n\n## Para una instalción limpia sólo linux\nPara eliminar por completo windows y migrar a sólo linux debo eliminar todas las\npartiiones creadas en ese momento, conservando las que vaya a realizar en linux\nempezando por el "/boot", "/" y "/home"',
+          code: '## Para dualboot\nSi tengo previamente instalado el windows en RAID y quiero poner dualboot con linux en\nAHCI, debo estar cambiando para entrar windows en la bios RAID y el AHCI para linux,\npara evitar esto debo tener instalado ambos sistemas operativos en AHCI\n\n## Para una instalción limpia sólo linux\nPara eliminar por completo windows y migrar a sólo linux debo eliminar todas las\nparticiones creadas en ese momento, conservando las que vaya a realizar en linux\nempezando por el "/boot", "/" y "/home"',
         },
       },
       {
