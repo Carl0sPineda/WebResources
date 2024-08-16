@@ -72,6 +72,25 @@ export const POSTS: DataItem[] = [
           code: "## Dockerfile\nDefine la manera en que se debe construir una imagen de Docker, describiendo los pasos\nnecesarios para configurar el entorno y la aplicación\n\n## .dockerignore \nEspecifica qué archivos y directorios deben ser ignorados durante la construcción de\nuna imagen de Docker para evitar incluir archivos innecesarios\n\n## docker-compose.yml\nDefine y gestiona aplicaciones Docker multicontenedor de manera estructurada y\nsimplificada, permitiendo la configuración de servicios, redes y volúmenes",
         },
       },
+      {
+        id: "B-03",
+        title: "VSCode con ASP.NET Core",
+        widget1: {
+          title: "1. Comandos para inicializar un nuevo proyecto",
+          languaje: "bash",
+          code: "## Muestra todas las plantillas disponibles que puedes utilizar\ndotnet new list\n\n## Generar un nuevo proyecto\ndotnet new <nombre_corto> -o <nombre_proyecto>\n\n## Ejecutar el proyecto\ndotnet run",
+        },
+        widget2: {
+          title: "2. Comando para Code First",
+          languaje: "bash",
+          code: "Defines tus modelos de datos mediante clases y luego generas la base\nde datos a partir de esas clases\n\n## Instala Entity Framework de forma global\ndotnet tool install --global dotnet-ef\n\n## Añade este paquete al proyecto\ndotnet add package Microsoft.EntityFrameworkCore.Design\n\n## Este es el comando principal que le dice a .NET que quieres crear las clases del\ndonet comando algo ",
+        },
+        widget3: {
+          title: "3. Comando para Database First",
+          languaje: "bash",
+          code: "Partes de una base de datos existente y generas las clases de modelo\n\n## Instala Entity Framework de forma global\ndotnet tool install --global dotnet-ef\n\n## Añade este paquete al proyecto\ndotnet add package Microsoft.EntityFrameworkCore.Design\n\n## Este es el comando principal que le dice a .NET que quieres crear las clases del\n## DbContext y los modelos basados en una base de datos existente\ndotnet ef dbcontext scaffold Name=ConnectionStrings:DefaultConnection\nMicrosoft.EntityFrameworkCore.SqlServer --output-dir Models",
+        },
+      },
     ],
   },
   {
