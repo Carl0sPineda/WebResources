@@ -83,7 +83,7 @@ export const POSTS: DataItem[] = [
         widget2: {
           title: "2. Comando para Code First",
           languaje: "bash",
-          code: "Defines tus modelos de datos mediante clases y luego generas la base\nde datos a partir de esas clases\n\n## Instala Entity Framework de forma global\ndotnet tool install --global dotnet-ef\n\n## Añade este paquete al proyecto\ndotnet add package Microsoft.EntityFrameworkCore.Design\n\n## Este es el comando principal que le dice a .NET que quieres crear las clases del\ndonet comando algo ",
+          code: "Defines tus modelos de datos mediante clases y luego generas la base\nde datos a partir de esas clases\n\n## Instala Entity Framework de forma global\ndotnet tool install --global dotnet-ef\n\n## Añade este paquete al proyecto\ndotnet add package Microsoft.EntityFrameworkCore.Design\n\n## Antes de ejecutar este comando debemos tener el DbContext, Modelos para las tablas\n## y la cadena de conexión con la base de datos previamente configurados\ndotnet ef migrations add <nombre_migración>\n\n## Este comando actualiza la base de datos mediante los modelos en el código con ayuda\n## de la migración ingresada en el paso anterior\ndotnet ef database update",
         },
         widget3: {
           title: "3. Comando para Database First",
