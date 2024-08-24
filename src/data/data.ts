@@ -81,14 +81,14 @@ export const POSTS: DataItem[] = [
           code: "## Muestra todas las plantillas disponibles que puedes utilizar\ndotnet new list\n\n## Generar un nuevo proyecto\ndotnet new <nombre_corto> -o <nombre_proyecto>\n\n## Ejecutar el proyecto\ndotnet run",
         },
         widget2: {
-          title: "2. Comando para Code First",
+          title: "2. Comandos para Code First",
           languaje: "bash",
           code: "Defines tus modelos en el código y con eso generas la base de datos automáticamente\n\n## Instalar Entity Framework de forma global\ndotnet tool install --global dotnet-ef\n\n## Añade este paquete al proyecto\ndotnet add package Microsoft.EntityFrameworkCore.Design\n\n## Antes de ejecutar este comando debemos tener el DbContext, Modelos y la cadena de\n## conexión para la base de datos previamente configurados\ndotnet ef migrations add <nombre_migración>\n\n## Este comando mantiene la base de datos sincronizada con el modelo de datos definido\n## en el código de tu aplicación\ndotnet ef database update",
         },
         widget3: {
-          title: "3. Comando para Database First",
+          title: "3. Comandos para Database First",
           languaje: "bash",
-          code: "Partes de una base de datos existente, la cual genera los modelos y el DbContext\n\n## Instalar Entity Framework de forma global\ndotnet tool install --global dotnet-ef\n\n## Añade este paquete al proyecto\ndotnet add package Microsoft.EntityFrameworkCore.Design\n\n## Este es el comando principal que le dice a .NET que quieres crear de forma\n## automática el DbContext y los modelos basados en una base de datos existente\ndotnet ef dbcontext scaffold Name=ConnectionStrings:DefaultConnection\nMicrosoft.EntityFrameworkCore.SqlServer --output-dir Models",
+          code: "Partes de una base de datos existente, la cual genera los modelos y el DbContext\n\n## Instalar Entity Framework de forma global\ndotnet tool install --global dotnet-ef\n\n## Añade este paquete al proyecto\ndotnet add package Microsoft.EntityFrameworkCore.Design\n\n## Este es el comando principal que le dice a .NET que quieres crear de forma\n## automática el DbContext y los modelos basados en una base de datos existente\ndotnet ef dbcontext scaffold Name=ConnectionStrings:DefaultConnection Microsoft.EntityFrameworkCore.SqlServer --output-dir Models --context-dir Data",
         },
       },
     ],
