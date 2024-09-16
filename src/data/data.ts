@@ -137,22 +137,61 @@ export const POSTS: DataItem[] = [
         widget1: {
           title: "1. Relación de uno a uno (1:1)",
           languaje: "sql",
-          code: "--Cada persona tiene un pasaporte y cada pasaporte pertenece a una persona\n\nCREATE TABLE persons (\n    id INT PRIMARY KEY IDENTITY(1,1),\n    name VARCHAR(255)\n);\n\nCREATE TABLE passports (\n    id INT PRIMARY KEY IDENTITY(1,1),\n    passport_number VARCHAR(20),\n    person_id INT,\n    FOREIGN KEY (person_id) REFERENCES persons(id)\n);",
+          code: "--Cada persona tiene un pasaporte y cada pasaporte pertenece a una persona\nCREATE TABLE persons (\n    id INT PRIMARY KEY IDENTITY(1,1),\n    name VARCHAR(255)\n)\n\nCREATE TABLE passports (\n    id INT PRIMARY KEY IDENTITY(1,1),\n    passport_number VARCHAR(20),\n    person_id INT,\n    FOREIGN KEY (person_id) REFERENCES persons(id)\n)",
         },
         widget2: {
           title: "2. Relación de muchos a muchos (M:N)",
           languaje: "sql",
-          code: "--Los estudiantes pueden inscribirse en muchos cursos y un curso\n--puede tener muchos estudiantes\n\nCREATE TABLE students (\n    id INT PRIMARY KEY IDENTITY(100,1),\n    name VARCHAR(255)\n)\n\nCREATE TABLE courses (\n    id INT PRIMARY KEY IDENTITY(200,1),\n    name VARCHAR(255)\n)\n\nCREATE TABLE enrollments (\n    id INT PRIMARY KEY IDENTITY(300,1),\n    student_id INT,\n    course_id INT,\n    FOREIGN KEY (student_id) REFERENCES students(id),\n    FOREIGN KEY (course_id) REFERENCES courses(id)\n)",
+          code: "--Los estudiantes pueden inscribirse en muchos cursos y un curso\n--puede tener muchos estudiantes\nCREATE TABLE students (\n    id INT PRIMARY KEY IDENTITY(100,1),\n    name VARCHAR(255)\n)\n\nCREATE TABLE courses (\n    id INT PRIMARY KEY IDENTITY(200,1),\n    name VARCHAR(255)\n)\n\nCREATE TABLE enrollments (\n    id INT PRIMARY KEY IDENTITY(300,1),\n    student_id INT,\n    course_id INT,\n    FOREIGN KEY (student_id) REFERENCES students(id),\n    FOREIGN KEY (course_id) REFERENCES courses(id)\n)",
         },
         widget3: {
           title: "3. Relación de uno a muchos (1:M)",
           languaje: "sql",
-          code: "--Un autor puede escribir muchos libros\n\nCREATE TABLE authors (\n    id INT PRIMARY KEY IDENTITY(1,1),\n    first_name VARCHAR(100),\n    last_name VARCHAR(100)\n)\n\nCREATE TABLE books (\n    id INT PRIMARY KEY IDENTITY(1,1),\n    title VARCHAR(200),\n    publication_year INT,\n    author_id INT,\n    FOREIGN KEY (author_id) REFERENCES authors(id)\n)",
+          code: "--Un autor puede escribir muchos libros\nCREATE TABLE authors (\n    id INT PRIMARY KEY IDENTITY(1,1),\n    first_name VARCHAR(100),\n    last_name VARCHAR(100)\n)\n\nCREATE TABLE books (\n    id INT PRIMARY KEY IDENTITY(1,1),\n    title VARCHAR(200),\n    publication_year INT,\n    author_id INT,\n    FOREIGN KEY (author_id) REFERENCES authors(id)\n)",
         },
         widget4: {
           title: "4. Relación de muchos a uno (M:1)",
           languaje: "sql",
-          code: "--Muchos empleados pueden trabajar para un departamento\n\nCREATE TABLE departments (\n    id INT PRIMARY KEY IDENTITY(1,1),\n    name VARCHAR(255)\n)\n\nCREATE TABLE employees (\n    id INT PRIMARY KEY IDENTITY(1,1),\n    name VARCHAR(255),\n    department_id INT,\n    FOREIGN KEY (department_id) REFERENCES departments(id)\n)",
+          code: "--Muchos empleados pueden trabajar para un departamento\nCREATE TABLE departments (\n    id INT PRIMARY KEY IDENTITY(1,1),\n    name VARCHAR(255)\n)\n\nCREATE TABLE employees (\n    id INT PRIMARY KEY IDENTITY(1,1),\n    name VARCHAR(255),\n    department_id INT,\n    FOREIGN KEY (department_id) REFERENCES departments(id)\n)",
+        },
+      },
+      {
+        id: "C-03",
+        title: "Joins",
+        widget1: {
+          title: "1. Añadir las tablas para realizar los joins",
+          languaje: "sql",
+          code: "-- Crear la tabla authors\nCREATE TABLE authors (\n    id INT PRIMARY KEY,\n    first_name VARCHAR(255),\n    last_name VARCHAR(255)\n)\n\n-- Crear la tabla books\nCREATE TABLE books (\n    id INT PRIMARY KEY,\n    title VARCHAR(255),\n    author_id INT,\n    publication_date DATE,\n    FOREIGN KEY (author_id) REFERENCES authors(id)\n)",
+        },
+        widget2: {
+          title: "2. INNER JOIN",
+          languaje: "sql",
+          code: "--Definición: Unión interna especificando que solo queremos los elementos\n--que coinciden en ambas partes\n\n-- Muestra solo los libros que tienen un autor asociado\nSELECT b.title, a.first_name, a.last_name\nFROM books AS b\nINNER JOIN authors AS a ON b.author_id = a.id\n\n\
+|--title------------------------------|--first_name|--last_name---|\n\
+|-------------------------------------|------------|--------------|\n\
+|-- Harry Potter and the Sorcerer's Stone| J.K.    | Rowling      |\n\
+|-- It                                | Stephen    | King         |\n\
+|-- A Game of Thrones                 | George     | R.R. Martin  |",
+        },
+        widget3: {
+          title: "2. LEFT JOIN",
+          languaje: "sql",
+          code: "--Une todos los elementos de la izquierda incluso si no hay coincidencia en la derecha\n\n--Muestra todos los autores incluso aquellos que no han escrito ningún libro\nSELECT a.first_name, a.last_name, b.title\nFROM authors AS a\nLEFT JOIN books AS b ON a.id = b.author_id\n\n\
+|--first_name-|--last_name---|--title------------------------------|\n\
+|-------------|--------------|-------------------------------------|\n\
+|-- J.K.      | Rowling      | Harry Potter and the Sorcerer's Stone|\n\
+|-- Jake      | Owen         | NULL                                |\n\
+|-- George    | R.R. Martin  | A Game of Thrones                   |",
+        },
+        widget4: {
+          title: "3. RIGHT JOIN",
+          languaje: "sql",
+          code: "--Une todos los elementos de la derecha incluso si no hay coincidencia en la izquierda\n\n--Muestra todos los libros incluso aquellos que no tienen un autor asociado\nSELECT a.first_name, a.last_name, b.title\nFROM authors AS a\nRIGHT JOIN books AS b ON a.id = b.author_id\n\n\
+|--first_name-|--last_name---|--title------------------------------|\n\
+|-------------|--------------|-------------------------------------|\n\
+|-- J.K.      | Rowling      | Harry Potter and the Sorcerer's Stone|\n\
+|-- NULL      | NULL         | The Name of the Wind                |\n\
+|-- George    | R.R. Martin  | A Game of Thrones                   |",
         },
       },
     ],
