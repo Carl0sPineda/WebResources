@@ -131,6 +131,30 @@ export const POSTS: DataItem[] = [
           code: "CREATE PROCEDURE sp_DeleteTask\n  @id int\nAS\nBEGIN\n  DELETE tasks\n  WHERE id = @id;\nEND\nGO",
         },
       },
+      {
+        id: "C-02",
+        title: "Relaciones entre tablas",
+        widget1: {
+          title: "1. Relación de uno a uno (1:1)",
+          languaje: "sql",
+          code: "--Cada persona tiene un pasaporte y cada pasaporte pertenece a una persona\n\nCREATE TABLE persons (\n    id INT PRIMARY KEY IDENTITY(1,1),\n    name VARCHAR(255)\n);\n\nCREATE TABLE passports (\n    id INT PRIMARY KEY IDENTITY(1,1),\n    passport_number VARCHAR(20),\n    person_id INT,\n    FOREIGN KEY (person_id) REFERENCES persons(id)\n);",
+        },
+        widget2: {
+          title: "2. Relación de muchos a muchos (M:N)",
+          languaje: "sql",
+          code: "--Los estudiantes pueden inscribirse en muchos cursos y un curso\n--puede tener muchos estudiantes\n\nCREATE TABLE students (\n    id INT PRIMARY KEY IDENTITY(100,1),\n    name VARCHAR(255)\n)\n\nCREATE TABLE courses (\n    id INT PRIMARY KEY IDENTITY(200,1),\n    name VARCHAR(255)\n)\n\nCREATE TABLE enrollments (\n    id INT PRIMARY KEY IDENTITY(300,1),\n    student_id INT,\n    course_id INT,\n    FOREIGN KEY (student_id) REFERENCES students(id),\n    FOREIGN KEY (course_id) REFERENCES courses(id)\n)",
+        },
+        widget3: {
+          title: "3. Relación de uno a muchos (1:M)",
+          languaje: "sql",
+          code: "--Un autor puede escribir muchos libros\n\nCREATE TABLE authors (\n    id INT PRIMARY KEY IDENTITY(1,1),\n    first_name VARCHAR(100),\n    last_name VARCHAR(100)\n)\n\nCREATE TABLE books (\n    id INT PRIMARY KEY IDENTITY(1,1),\n    title VARCHAR(200),\n    publication_year INT,\n    author_id INT,\n    FOREIGN KEY (author_id) REFERENCES authors(id)\n)",
+        },
+        widget4: {
+          title: "4. Relación de muchos a uno (M:1)",
+          languaje: "sql",
+          code: "--Muchos empleados pueden trabajar para un departamento\n\nCREATE TABLE departments (\n    id INT PRIMARY KEY IDENTITY(1,1),\n    name VARCHAR(255)\n)\n\nCREATE TABLE employees (\n    id INT PRIMARY KEY IDENTITY(1,1),\n    name VARCHAR(255),\n    department_id INT,\n    FOREIGN KEY (department_id) REFERENCES departments(id)\n)",
+        },
+      },
     ],
   },
   {
